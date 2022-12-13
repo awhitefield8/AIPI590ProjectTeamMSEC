@@ -6,7 +6,7 @@
 
 ## Introduction
 
-This project is pure class. I hope you enjoy reading it.
+[...]]
 
 ## Data
 
@@ -22,7 +22,7 @@ We use two offline evaluation metrics: Normalized Discounted Cumulative Gain (ND
 
 ## Algorithms
 
-We use SA2C and ...
+We use SA2C and [...]
 
 ## Results
 
@@ -47,7 +47,7 @@ By buy
 
 ## Conclusion
 
-The authors are amazing
+[...]
 
 
 ### Example
