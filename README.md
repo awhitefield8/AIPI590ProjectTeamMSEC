@@ -6,48 +6,56 @@
 
 ## Introduction
 
-[...]]
+In this project we train different session based product recommendation
+recommender and compare the performance of the recommenders. 
 
 ## Data
 
 We use two datasets: the H&M Personalized Fashion Recommendations dataset, and the Retailrocket recommender system dataset.
 
-
-
-
-
 ## Evaluation metrics
 
-We use two offline evaluation metrics: Normalized Discounted Cumulative Gain (NDCG) and Hit Ratio (HR).
+We use two offline evaluation metrics: Normalized Discounted Cumulative Gain (NDCG) and Hit Ratio (HR). 
 
 ## Algorithms
 
-We use SA2C and [...]
+We use SA2C and [....]
 
 ## Results
 
-First, we plot the results for each model, across both dataset. We look at HR and NDCG by purchase and by click.
+We run compare the metric development for various values of K (5,10,15 and 20). We look at metrics applied to clicks and to purchases.
 
-| **Models**  | **HR@5** | **NDCG@5** | **HR@10** | **NDCG@10** | **HR@20** | **NDCG@20** |
-| :---------: | :------: | :------: | :-------: | :-------: | :-------: | :-------: |
-| RR: SASRec-NonDL |  0.0399  |  0.0279  |  0.0530   |  0.0322   |  0.0637   |  0.0349   |
-| RR: SASRec-SA2C |  **0.0399**  |  **0.0279**  |  **0.0530**   |  **0.0322**   |  **0.0637**   |  **0.0349**   |
-| HM: SASRec-NonDL |  0.0399  |  0.0279  |  0.0530   |  0.0322   |  0.0637   |  0.0349   |
-| HM: SASRec-SA2C |  **0.0399**  |  **0.0279**  |  **0.0530**   |  **0.0322**   |  **0.0637**   |  **0.0349**   |
+![HM](./results/charts/SA2CResultsRetailRocketresults.png)
 
-By buy
+![HM](./results/charts/CELossOnlyResultsRetailRocketresults.png)
 
-| **Models**  | **HR@5** | **NDCG@5** | **HR@10** | **NDCG@10** | **HR@20** | **NDCG@20** |
-| :---------: | :------: | :------: | :-------: | :-------: | :-------: | :-------: |
-| RR: SASRec-NonDL |  0.0399  |  0.0279  |  0.0530   |  0.0322   |  0.0637   |  0.0349   |
-| RR: SASRec-SA2C |  **0.0399**  |  **0.0279**  |  **0.0530**   |  **0.0322**   |  **0.0637**   |  **0.0349**   |
-| HM: SASRec-NonDL |  0.0399  |  0.0279  |  0.0530   |  0.0322   |  0.0637   |  0.0349   |
-| HM: SASRec-SA2C |  **0.0399**  |  **0.0279**  |  **0.0530**   |  **0.0322**   |  **0.0637**   |  **0.0349**   |
+![HM](./results/charts/SA2CResultsHMresults.png)
+
+![HM](./results/charts/CELossOnlyHMresults.png)
+
+
+First, we plot the results for each model, across both dataset. We look at HR and NDCG by click and by purchase.
+
+| **Models**         | **HR@5** | **NDCG@5** | **HR@10** | **NDCG@10** | **HR@15** | **NDCG@15** | **HR@20** | **NDCG@20** |
+| :---------:        | :------: | :------:   | :-------: | :-------:   | :-------: | :-------:   | :-------: | :-------:   |
+| RR: GRU-NonDL   |   0.3657  |  0.2934    |  0.4214   |   0.3115    |  0.4534  |  0.3199      |   0.4717  |   0.3242     | 
+| RR: GRU-SA2C   |   0.5350  |   0.4570    |   0.5872   |   0.4742    |   0.6095  |   0.4801    | 0.6263  |    0.4841     | 
+| HM: GRU-NonDL   |  0.0123  |  0.0086   |  0.0168   |   0.0100    |  0.0202  |  0.0109      | 0.0226 |   0.0115     | 
+| HM: GRU-SA2C   |  0.0121  |   0.0087   |  0.01838   |   0.0107    |   0.0216  |  0.0116     | 0.0242  |   0.0122     | 
+
+We then compared the results by click for the RR data.
+
+
+| **Models**         | **HR@5** | **NDCG@5** | **HR@10** | **NDCG@10** | **HR@15** | **NDCG@15** | **HR@20** | **NDCG@20** |
+| :---------:        | :------: | :------:   | :-------: | :-------:   | :-------: | :-------:   | :-------: | :-------:   |
+| RR: GRU-NonDL   |  0.1811  |  0.1386    |  0.2227   |   0.1520    |  0.2469  |  0.1585      | 0.2637   |   0.1625     | 
+| RR: GRU-SA2C   |  0.2713  |  0.2136    |  0.3199   |   0.2294    |   0.3469  |  0.2365     | 0.3649  |   0.2408     | 
+
 
 
 ## Conclusion
 
-[...]
+The GRU-SA2C methods outperform the NonDL methods across the two datasets. 
 
 
 ### Example
@@ -55,7 +63,7 @@ By buy
 To models are run via the command line. The results are stored in the results folder, but this location can be changed with the results_path command line argument. 
 
 ```
-python SA2C.py --model=GRU --epoch=15 --data=data_rr
+python SA2C.py --model=GRU --epoch=15 --data=../../data/data_rr/
 ```
 
 ## Code Structure
@@ -67,6 +75,8 @@ python SA2C.py --model=GRU --epoch=15 --data=data_rr
 │   ├── ResultPlotting.ipynb
 │   ├── CELossOnly_rr_experiments.ipynb
 │   ├── sa2c_rr_experiments.ipynb
+│   ├── CELossOnly_hm_experiments.ipynb
+│   ├── sa2c_hm_experiments.ipynb
 |   |── rr_tester.ipynb
 |   |── hm_tester.ipynb
 │   └── HM_SNQN_SASRec.ipynb
@@ -88,7 +98,6 @@ python SA2C.py --model=GRU --epoch=15 --data=data_rr
 |   ├── data_hm
 |   └── data_hm
 └── results
-
 
 ```
 
