@@ -64,7 +64,7 @@ The GRU-SA2C methods outperform the NonDL methods across the two datasets.
 
 ### Example
 
-To models are run via the command line. The results are stored in the results folder, but this location can be changed with the results_path command line argument. 
+The models are run via the command line. The results are stored in the results folder, but this location can be changed with the results_path command line argument. 
 
 ```
 python SA2C.py --model=GRU --epoch=15 --data=../../data/data_rr/
