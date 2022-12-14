@@ -53,7 +53,7 @@ def parse_args():
     parser.add_argument('--num_heads', default=1, type=int, help='number heads (for SASRec)')
     parser.add_argument('--num_blocks', default=1, type=int, help='number heads (for SASRec)')
     parser.add_argument('--dropout_rate', default=0.1, type=float)
-    parser.add_argument('--results_path', default="../../results/CELossOnlyResults.csv")
+    parser.add_argument('--results_path', default="../../Results/CELossOnlyResults.csv")
 
     return parser.parse_args()
 
@@ -518,11 +518,8 @@ if __name__ == '__main__':
                         print("the loss in %dth batch is: %f" % (total_step, loss))
                     if total_step % 4000 == 0:
                         results.append(evaluate(sess))
-                        print(results)
-    print(results)
     results = pd.DataFrame(results)
-    print(results)
-    results.to_csv(args.results_path) #args.dropout
+    results.to_csv(args.results_path)
 
 
 
