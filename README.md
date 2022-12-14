@@ -10,7 +10,7 @@ In this project we train different session based product recommenders. We compar
 
 ## Data
 
-We use two datasets: the H&M Personalized Fashion Recommendations dataset, and the Retailrocket recommender system dataset.
+We use two datasets: the H&M Personalized Fashion Recommendations dataset (HM), and the Retailrocket recommender system dataset (RR).
 
 ## Evaluation metrics
 
@@ -33,7 +33,11 @@ We run compare the metric development for various values of K (5,10,15 and 20). 
 ![HM](./results/charts/CELossOnlyHMresults.png)
 
 
-First, we plot the results for each model, across both datasets. We look at HR and NDCG by click and by purchase. First we look at results by purchase.
+We then compare HR and NDCG metrics across algorithms and dataset. In the tables in the following section, each column refers to a metric applied and level of K. For example, **HR@5** corresponds to the the hit rate at K=5.
+
+### Purchases
+
+We first look at the results based on purchases. 
 
 | **Models**         | **HR@5** | **NDCG@5** | **HR@10** | **NDCG@10** | **HR@15** | **NDCG@15** | **HR@20** | **NDCG@20** |
 | :---------:        | :------: | :------:   | :-------: | :-------:   | :-------: | :-------:   | :-------: | :-------:   |
@@ -43,7 +47,9 @@ First, we plot the results for each model, across both datasets. We look at HR a
 | HM: GRU-NonDL   |  0.0123  |  0.0086   |  0.0168   |   0.0100    |  0.0202  |  0.0109      | 0.0226 |   0.0115     | 
 | HM: GRU-SA2C   |  0.0121  |   0.0087   |  0.01838   |   0.0107    |   0.0216  |  0.0116     | 0.0242  |   0.0122     | 
 
-We then compared the results by click for the RR data.
+### Clicks
+
+We then compare the results based on clicks. Note that this data does not exist for the HM data.
 
 | **Models**         | **HR@5** | **NDCG@5** | **HR@10** | **NDCG@10** | **HR@15** | **NDCG@15** | **HR@20** | **NDCG@20** |
 | :---------:        | :------: | :------:   | :-------: | :-------:   | :-------: | :-------:   | :-------: | :-------:   |
@@ -52,12 +58,9 @@ We then compared the results by click for the RR data.
 | RR: SASRec-SA2C   |   -  |  -    |  -   |   -    |  -  |  -      |   -  |   -    | 
 
 
-
-
 ## Conclusion
 
 The GRU-SA2C methods outperform the NonDL methods across the two datasets. 
-
 
 ### Example
 
