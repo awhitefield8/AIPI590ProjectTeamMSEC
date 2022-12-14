@@ -53,7 +53,7 @@ def parse_args():
     parser.add_argument('--num_heads', default=1, type=int, help='number heads (for SASRec)')
     parser.add_argument('--num_blocks', default=1, type=int, help='number heads (for SASRec)')
     parser.add_argument('--dropout_rate', default=0.1, type=float)
-    parser.add_argument('--results_path', default="../../Results/CELossOnlyResults.csv")
+    parser.add_argument('--results_path', default="../../results/CELossOnlyResults.csv")
 
     return parser.parse_args()
 

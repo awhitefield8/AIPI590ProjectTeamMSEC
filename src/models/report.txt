@@ -1,0 +1,50 @@
+TensorFlow 2.0 Upgrade Script
+-----------------------------
+Converted 1 files
+Detected 2 issues that require attention
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+File: /content/gdrive/My Drive/project-recommendations/old/SA2C_code/Kaggle/SASRecModules.py
+--------------------------------------------------------------------------------
+/content/gdrive/My Drive/project-recommendations/old/SA2C_code/Kaggle/SASRecModules.py:91:23: WARNING: tf.get_variable requires manual check. tf.get_variable returns ResourceVariables by default in 2.0, which have well-defined semantics and are stricter about shapes. You can disable this behavior by passing use_resource=False, or by calling tf.compat.v1.disable_resource_variables().
+/content/gdrive/My Drive/project-recommendations/old/SA2C_code/Kaggle/SASRecModules.py:99:18: WARNING: tf.nn.embedding_lookup requires manual check. `partition_strategy` has been removed from tf.nn.embedding_lookup.  The 'div' strategy will be used by default.
+================================================================================
+Detailed log follows:
+
+================================================================================
+--------------------------------------------------------------------------------
+Processing file '/content/gdrive/My Drive/project-recommendations/old/SA2C_code/Kaggle/SASRecModules.py'
+ outputting to '/content/gdrive/My Drive/project-recommendations/old/SA2C_code/Kaggle/SASRecModules_new.py'
+--------------------------------------------------------------------------------
+
+22:11: INFO: Added keywords to args of function 'tf.convert_to_tensor'
+90:9: INFO: Renamed 'tf.variable_scope' to 'tf.compat.v1.variable_scope'
+91:23: WARNING: tf.get_variable requires manual check. tf.get_variable returns ResourceVariables by default in 2.0, which have well-defined semantics and are stricter about shapes. You can disable this behavior by passing use_resource=False, or by calling tf.compat.v1.disable_resource_variables().
+91:23: INFO: Renamed 'tf.get_variable' to 'tf.compat.v1.get_variable'
+95:51: INFO: Multiplying scale arg of tf.contrib.layers.l2_regularizer by half to what tf.keras.regularizers.l2 expects.
+
+99:18: INFO: Added keywords to args of function 'tf.nn.embedding_lookup'
+99:18: WARNING: tf.nn.embedding_lookup requires manual check. `partition_strategy` has been removed from tf.nn.embedding_lookup.  The 'div' strategy will be used by default.
+134:9: INFO: Renamed 'tf.variable_scope' to 'tf.compat.v1.variable_scope'
+142:12: INFO: Renamed 'tf.layers.dense' to 'tf.compat.v1.layers.dense'
+143:12: INFO: Renamed 'tf.layers.dense' to 'tf.compat.v1.layers.dense'
+144:12: INFO: Renamed 'tf.layers.dense' to 'tf.compat.v1.layers.dense'
+152:32: INFO: Added keywords to args of function 'tf.transpose'
+158:35: INFO: Added keywords to args of function 'tf.reduce_sum'
+160:62: INFO: Added keywords to args of function 'tf.shape'
+163:18: INFO: Renamed 'tf.where' to 'tf.compat.v1.where'
+169:54: INFO: Added keywords to args of function 'tf.shape'
+172:22: INFO: Renamed 'tf.where' to 'tf.compat.v1.where'
+178:37: INFO: Added keywords to args of function 'tf.reduce_sum'
+180:70: INFO: Added keywords to args of function 'tf.shape'
+184:18: INFO: Renamed 'tf.layers.dropout' to 'tf.compat.v1.layers.dropout'
+184:73: INFO: Added keywords to args of function 'tf.convert_to_tensor'
+219:9: INFO: Renamed 'tf.variable_scope' to 'tf.compat.v1.variable_scope'
+223:18: INFO: Renamed 'tf.layers.conv1d' to 'tf.compat.v1.layers.conv1d'
+224:18: INFO: Renamed 'tf.layers.dropout' to 'tf.compat.v1.layers.dropout'
+224:73: INFO: Added keywords to args of function 'tf.convert_to_tensor'
+228:18: INFO: Renamed 'tf.layers.conv1d' to 'tf.compat.v1.layers.conv1d'
+229:18: INFO: Renamed 'tf.layers.dropout' to 'tf.compat.v1.layers.dropout'
+229:73: INFO: Added keywords to args of function 'tf.convert_to_tensor'
+--------------------------------------------------------------------------------
+

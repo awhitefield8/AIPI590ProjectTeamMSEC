@@ -49,17 +49,18 @@ def normalize(inputs,
     Returns:
       A tensor with the same shape and data dtype as `inputs`.
     '''
-    with tf.variable_scope(scope, reuse=reuse):
+    with tf.compat.v1.variable_scope(scope, reuse=reuse):
         inputs_shape = inputs.get_shape()
         params_shape = inputs_shape[-1:]
 
-        mean, variance = tf.nn.moments(inputs, [-1], keep_dims=True)
+        mean, variance = tf.nn.moments(x=inputs, axes=[-1], keepdims=True)
         beta = tf.Variable(tf.zeros(params_shape))
         gamma = tf.Variable(tf.ones(params_shape))
         normalized = (inputs - mean) / ((variance + epsilon) ** (.5))
         outputs = gamma * normalized + beta
 
     return outputs
+
 
 def calculate_hit(sorted_list,topk,true_items,rewards,r_click,total_reward,hit_click,ndcg_click,hit_purchase,ndcg_purchase):
     for i in range(len(topk)):
