@@ -19,7 +19,7 @@ We use two offline evaluation metrics: Normalized Discounted Cumulative Gain (ND
 
 ## Algorithms
 
-We use SA2C and [....]
+We use SA2C and a standard deep learning set up of a GRU using only cross entropy loss to train the network. In this project we want to look at the gains from adding a reinforcement learning regularization to cross entropy loss.
 
 ## Results
 
