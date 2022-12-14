@@ -60,7 +60,7 @@ We then compare the results based on clicks. Note that this data does not exist 
 
 ## Conclusion
 
-The GRU-SA2C methods outperform the NonDL methods across the two datasets. We would expect this because without using reinforcement learning the model will not properly discount out of training distribution results. So adding this regularization term of advantage helps the model stay within the range of it's training data.
+The GRU-SA2C methods outperform the NonDL methods across the two datasets. We would expect this because without using reinforcement learning the model will not properly discount out of training distribution results. So adding this regularization term of advantage helps the model stay within the range of it's training data. This regularization also helps prevent the model from overfitting to the training set. We can see this most clearly on the RetailRocket data, where the SA2C model gradually gets better with more epochs. In constrast we can see the model without regularization starts to decrease in its offline metrics as training continues.
 
 ### Example
 
