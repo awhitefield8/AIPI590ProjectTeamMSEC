@@ -22,7 +22,7 @@ We use SA2C and a standard deep learning set up of a GRU using only cross entrop
 
 ## Results
 
-We run compare the metric development for various values of K (5,10,15 and 20). We look at metrics applied to clicks and to purchases.
+We run compare the metric development for various values of K (5,10,15 and 20). We look at metrics applied to clicks and to purchases. Note that for the HM data, there is no click data so the charts are a flat line that should be ignored.
 
 ![HM](./results/charts/SA2CResultsRetailRocketresults.png)
 
