@@ -10,11 +10,11 @@ In this project we train different session based product recommenders. We compar
 
 ## Data
 
-We use two datasets: the H&M Personalized Fashion Recommendations dataset (HM), and the Retailrocket recommender system dataset (RR).
+We use two datasets: the H&M Personalized Fashion Recommendations dataset (HM), and the Retailrocket recommender system dataset (RR). The HM Fashoin dataset contains the purchase data containing the time and the time of purchase for many customers. It also has product descriptions and images that are not used in this work. Retail Rocket contains data on the time and date of items clicked on and purchased by consumers.
 
 ## Evaluation metrics
 
-We use two offline evaluation metrics: Normalized Discounted Cumulative Gain (NDCG) and Hit Ratio (HR). 
+We use two offline evaluation metrics: Normalized Discounted Cumulative Gain (NDCG) and Hit Ratio (HR). The Hit Rate is whether the item that the consumer next clicked on or bought is in the top k items reported by the model. NDCG is a metric for evaluating the quality of the results. It looks at the hit rate and discounts the hit for its position in the top k. Lower down the lower the gain. It is then normalized by dividing by the best possible dicounted cumulative gain.
 
 ## Algorithms
 
@@ -60,7 +60,7 @@ We then compare the results based on clicks. Note that this data does not exist 
 
 ## Conclusion
 
-The GRU-SA2C methods outperform the NonDL methods across the two datasets. 
+The GRU-SA2C methods outperform the NonDL methods across the two datasets. We would expect this because without using reinforcement learning the model will not properly discount out of training distribution results. So adding this regularization term of advantage helps the model stay within the range of it's training data.
 
 ### Example
 
