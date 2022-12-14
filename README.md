@@ -6,8 +6,7 @@
 
 ## Introduction
 
-In this project we train different session based product recommendation
-recommender and compare the performance of the recommenders. 
+In this project we train different session based product recommenders. We compare the performance of the recommenders across two datasets.
 
 ## Data
 
@@ -34,7 +33,7 @@ We run compare the metric development for various values of K (5,10,15 and 20). 
 ![HM](./results/charts/CELossOnlyHMresults.png)
 
 
-First, we plot the results for each model, across both dataset. We look at HR and NDCG by click and by purchase. First we look at results by purchase.
+First, we plot the results for each model, across both datasets. We look at HR and NDCG by click and by purchase. First we look at results by purchase.
 
 | **Models**         | **HR@5** | **NDCG@5** | **HR@10** | **NDCG@10** | **HR@15** | **NDCG@15** | **HR@20** | **NDCG@20** |
 | :---------:        | :------: | :------:   | :-------: | :-------:   | :-------: | :-------:   | :-------: | :-------:   |
@@ -45,7 +44,6 @@ First, we plot the results for each model, across both dataset. We look at HR an
 | HM: GRU-SA2C   |  0.0121  |   0.0087   |  0.01838   |   0.0107    |   0.0216  |  0.0116     | 0.0242  |   0.0122     | 
 
 We then compared the results by click for the RR data.
-
 
 | **Models**         | **HR@5** | **NDCG@5** | **HR@10** | **NDCG@10** | **HR@15** | **NDCG@15** | **HR@20** | **NDCG@20** |
 | :---------:        | :------: | :------:   | :-------: | :-------:   | :-------: | :-------:   | :-------: | :-------:   |
