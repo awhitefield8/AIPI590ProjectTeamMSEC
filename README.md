@@ -86,6 +86,8 @@ python SA2C.py --model=GRU --epoch=15 --data=../../data/data_rr/
 │   ├── sa2c_rr_experiments.ipynb
 │   ├── CELossOnly_hm_experiments.ipynb
 │   ├── sa2c_hm_experiments.ipynb
+│   ├── sa2c_sasrec_rr_experiments.ipynb
+│   ├── sa2c_sasrec_hm_experiments.ipynb
 |   |── rr_tester.ipynb
 |   |── hm_tester.ipynb
 │   └── HM_SNQN_SASRec.ipynb
