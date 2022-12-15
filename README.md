@@ -64,7 +64,7 @@ We then compare the results based on clicks. Note that this data does not exist 
 
 ## Conclusion
 
-The GRU-SA2C methods outperform the NonDL methods across the two datasets. We would expect this because without using reinforcement learning the model will not properly discount out of training distribution results. So adding this regularization term of advantage helps the model stay within the range of it's training data.
+The GRU-SA2C methods outperform the NonDL methods across the two datasets. We would expect this because without using reinforcement learning the model will not properly discount out of training distribution results. So adding this regularization term of advantage helps the model stay within the range of it's training data. Using a transformer improved the metrics bu about 1% in the RetailRocket data set and about 0.02% in the H&M data.
 
 
 ### Example
@@ -132,3 +132,13 @@ Retailrocket Recommender System [<a href="https://www.kaggle.com/datasets/retail
 
 
 ### Authors: Jordan Axelrod, Alexander Whitefield
+
+### Contributions
+
+Jordan Axelrod
+
+Creating the nonDL model and the data visualizations. Researched different data sources. Ran the models on the HM data. Created data collection methods inside evaluate and the main if statement of SA2C and CEOnly. Wrote portions of the report. 
+
+Alexander Whitefield
+
+Created the data pipeline for the RetailRocket data. Ran the models on the RetailRocket data. Converted the repository from Tensorflow v1 to Tensorflow v2. Wrote portions of the report. 
