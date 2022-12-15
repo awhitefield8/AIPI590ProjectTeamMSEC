@@ -308,7 +308,7 @@ def evaluate(sess):
     groups = eval_sessions.groupby('session_id')
     batch = 100
     evaluated=0
-    total_clicks=0.0
+    total_clicks=0.1
     total_purchase = 0.0
     total_reward = [0, 0, 0, 0]
     hit_clicks=[0,0,0,0]
@@ -317,11 +317,11 @@ def evaluate(sess):
     ndcg_purchase=[0,0,0,0]
 
     #off_prob_total=[0.0]
-    off_prob_click=[0.0]
+    off_prob_click=[0.1]
     off_prob_purchase=[0.0]
 
 
-    off_click_ng=[0.0]
+    off_click_ng=[0.1]
     off_purchase_ng=[0.0]
 
     while evaluated<len(eval_ids):
